@@ -18,7 +18,7 @@
 ## Как использовать 🚀
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/ваш-username/EduScoreCalc.git
+   git clone https://github.com/Ramcache/EduScoreCalc.git
    ```
 2. Перейдите в директорию проекта:
    ```bash

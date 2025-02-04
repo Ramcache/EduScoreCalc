@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор оценок</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Подключение библиотеки иконок -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        /* Стили для красивых кнопок, использующих переменные из style.css */
+        .styled-button {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .styled-button:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .styled-button i {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+<main class="container">
+    <header>
+        <h1>📚 Калькулятор оценок</h1>
+    </header>
+
+    <section class="glass-card">
+        <p>Выберите уровень образования:</p>
+        <div class="button-group">
+            <a href="/grades?type=primary" class="styled-button">
+                <i data-feather="book-open"></i>
+                Начальная школа
+            </a>
+            <a href="/grades?type=secondary" class="styled-button">
+                <i data-feather="book"></i>
+                Средняя и старшая школа
+            </a>
+        </div>
+    </section>
+</main>
+
+<script>
+    // Замена атрибутов data-feather на SVG-иконки
+    feather.replace();
+</script>
+</body>
+</html>

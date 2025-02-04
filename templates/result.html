@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результат | Калькулятор оценок</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        /* Дополнительные стили для страницы результата (при необходимости) */
+        #result {
+            text-align: center;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<main class="container">
+    <header>
+        <h1>🎯 Результат</h1>
+    </header>
+
+    <section class="glass-card">
+        <!-- Здесь отображается результат, форматируется с точностью до двух знаков после запятой -->
+        <div id="result">{{printf "%.2f" .Result}}</div>
+        <div class="button-group">
+            <a href="/grades" class="styled-button">
+                <i data-feather="arrow-left"></i>
+                Назад
+            </a>
+            <a href="/" class="styled-button">
+                <i data-feather="home"></i>
+                На главную
+            </a>
+        </div>
+    </section>
+</main>
+
+<script>
+    feather.replace();
+</script>
+</body>
+</html>

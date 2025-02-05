@@ -146,3 +146,52 @@ button svg {
         justify-content: center;
     }
 }
+
+/* Добавим стили для кнопки удаления и оптимизации под смартфоны */
+.delete-button {
+    background: #ef4444;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.delete-button:hover {
+    background: #dc2626;
+}
+
+.delete-button i {
+    color: white;
+    width: 1rem;
+    height: 1rem;
+}
+
+.grade-entry {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 1fr 100px auto;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 640px) {
+    .grade-entry {
+        grid-template-columns: 1fr auto;
+    }
+
+    .grade-entry input[type="number"] {
+        grid-column: 1 / -1;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .button-group button {
+        width: 100%;
+    }
+}

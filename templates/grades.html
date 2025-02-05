@@ -15,6 +15,9 @@
                     ${document.querySelector('select[name="activityCode"]').innerHTML}
                 </select>
                 <input type="number" name="score" min="1" max="5" required>
+                <button type="button" class="delete-button" onclick="this.parentElement.remove()">
+                    <i data-feather="trash-2"></i>
+                </button>
             `;
             container.appendChild(newEntry);
             feather.replace();
@@ -31,79 +34,82 @@
                 <div class="grade-entry">
                     <select name="activityCode">
                         {{if eq .SchoolType "primary"}}
-                            <option value="ИК/Р">Итоговая контрольная работа</option>
-                            <option value="АК/Р">Административная контрольная работа</option>
-                            <option value="Д/С">Диагностический срез</option>
-                            <option value="ИКД">Итоговый контрольный диктант</option>
-                            <option value="Пр-т">Проект</option>
-                            <option value="ВКР">Входная контрольная работа</option>
-                            <option value="ВКД">Входной контрольный диктант</option>
-                            <option value="К/Р">Контрольная работа</option>
-                            <option value="КД">Контрольный диктант</option>
-                            <option value="Д">Диктант</option>
-                            <option value="И">Изложение</option>
-                            <option value="КОРР">Корректированная</option>
-                            <option value="СОЧ">Сочинение</option>
-                            <option value="ТЧ">Техника чтения</option>
-                            <option value="КС">Контрольное списывание</option>
-                            <option value="СПИС">Списывание</option>
-                            <option value="М/Д">Математический диктант</option>
-                            <option value="ПР">Проверочная работа</option>
-                            <option value="С/Р">Самостоятельная работа</option>
-                            <option value="СД">Словарный диктант</option>
-                            <option value="Тест">Тест</option>
-                            <option value="ДОК">Доклад</option>
-                            <option value="Д/Р">Домашняя работа</option>
-                            <option value="Наиз">Наизусть</option>
-                            <option value="ПЗ">Пересказ</option>
-                            <option value="РНО">Работа над ошибками</option>
-                            <option value="ДУ">Дистанционный урок</option>
-                            <option value="Р/У">Работа на уроке</option>
-                            <option value="Чт/В">Чтение вслух</option>
-                            <option value="ОТВ">Ответ на уроке</option>
+                        <option value="ИК/Р">Итоговая контрольная работа</option>
+                        <option value="АК/Р">Административная контрольная работа</option>
+                        <option value="Д/С">Диагностический срез</option>
+                        <option value="ИКД">Итоговый контрольный диктант</option>
+                        <option value="Пр-т">Проект</option>
+                        <option value="ВКР">Входная контрольная работа</option>
+                        <option value="ВКД">Входной контрольный диктант</option>
+                        <option value="К/Р">Контрольная работа</option>
+                        <option value="КД">Контрольный диктант</option>
+                        <option value="Д">Диктант</option>
+                        <option value="И">Изложение</option>
+                        <option value="КОРР">Корректированная</option>
+                        <option value="СОЧ">Сочинение</option>
+                        <option value="ТЧ">Техника чтения</option>
+                        <option value="КС">Контрольное списывание</option>
+                        <option value="СПИС">Списывание</option>
+                        <option value="М/Д">Математический диктант</option>
+                        <option value="ПР">Проверочная работа</option>
+                        <option value="С/Р">Самостоятельная работа</option>
+                        <option value="СД">Словарный диктант</option>
+                        <option value="Тест">Тест</option>
+                        <option value="ДОК">Доклад</option>
+                        <option value="Д/Р">Домашняя работа</option>
+                        <option value="Наиз">Наизусть</option>
+                        <option value="ПЗ">Пересказ</option>
+                        <option value="РНО">Работа над ошибками</option>
+                        <option value="ДУ">Дистанционный урок</option>
+                        <option value="Р/У">Работа на уроке</option>
+                        <option value="Чт/В">Чтение вслух</option>
+                        <option value="ОТВ">Ответ на уроке</option>
                         {{else}}
-                            <option value="ПА">Промежуточная аттестация</option>
-                            <option value="ИК/Р">Итоговая контрольная работа</option>
-                            <option value="АК/Р">Административная контрольная работа</option>
-                            <option value="Д/С">Диагностический срез</option>
-                            <option value="ИКД">Итоговый контрольный диктант</option>
-                            <option value="Пр-т">Проект</option>
-                            <option value="ВКР">Входная контрольная работа</option>
-                            <option value="ВКД">Входной контрольный диктант</option>
-                            <option value="К/Р">Контрольная работа</option>
-                            <option value="КД">Контрольный диктант</option>
-                            <option value="Зчт">Зачет</option>
-                            <option value="И">Изложение</option>
-                            <option value="КОРР">Корректированная</option>
-                            <option value="СОЧ">Сочинение</option>
-                            <option value="ТЧ">Техника чтения</option>
-                            <option value="АУД">Аудирование</option>
-                            <option value="ДИАЛ">Диалогическая речь (иностранный язык)</option>
-                            <option value="ЛЗ">Лабораторное занятие</option>
-                            <option value="М/Д">Математический диктант</option>
-                            <option value="ПИС">Письмо (иностранный язык)</option>
-                            <option value="ПрЗ">Практическое занятие</option>
-                            <option value="ПР">Проверочная работа</option>
-                            <option value="РЕФ">Реферат</option>
-                            <option value="С/Р">Самостоятельная работа</option>
-                            <option value="СД">Словарный диктант</option>
-                            <option value="Тест">Тест</option>
-                            <option value="ДОК">Доклад</option>
-                            <option value="Д/Р">Домашняя работа</option>
-                            <option value="Л/Р">Лабораторная работа</option>
-                            <option value="Наиз">Наизусть</option>
-                            <option value="П/Р">Практическая работа</option>
-                            <option value="РНО">Работа над ошибками</option>
-                            <option value="К/К">Работа с контурными картами</option>
-                            <option value="ТР">Творческая работа</option>
-                            <option value="ДУ">Дистанционный урок</option>
-                            <option value="Р/У">Работа на уроке</option>
-                            <option value="Р/Т">Рабочая тетрадь (конспект)</option>
-                            <option value="ЧИТ">Чтение (иностранный язык)</option>
-                            <option value="ОТВ">Ответ на уроке</option>
+                        <option value="ПА">Промежуточная аттестация</option>
+                        <option value="ИК/Р">Итоговая контрольная работа</option>
+                        <option value="АК/Р">Административная контрольная работа</option>
+                        <option value="Д/С">Диагностический срез</option>
+                        <option value="ИКД">Итоговый контрольный диктант</option>
+                        <option value="Пр-т">Проект</option>
+                        <option value="ВКР">Входная контрольная работа</option>
+                        <option value="ВКД">Входной контрольный диктант</option>
+                        <option value="К/Р">Контрольная работа</option>
+                        <option value="КД">Контрольный диктант</option>
+                        <option value="Зчт">Зачет</option>
+                        <option value="И">Изложение</option>
+                        <option value="КОРР">Корректированная</option>
+                        <option value="СОЧ">Сочинение</option>
+                        <option value="ТЧ">Техника чтения</option>
+                        <option value="АУД">Аудирование</option>
+                        <option value="ДИАЛ">Диалогическая речь (иностранный язык)</option>
+                        <option value="ЛЗ">Лабораторное занятие</option>
+                        <option value="М/Д">Математический диктант</option>
+                        <option value="ПИС">Письмо (иностранный язык)</option>
+                        <option value="ПрЗ">Практическое занятие</option>
+                        <option value="ПР">Проверочная работа</option>
+                        <option value="РЕФ">Реферат</option>
+                        <option value="С/Р">Самостоятельная работа</option>
+                        <option value="СД">Словарный диктант</option>
+                        <option value="Тест">Тест</option>
+                        <option value="ДОК">Доклад</option>
+                        <option value="Д/Р">Домашняя работа</option>
+                        <option value="Л/Р">Лабораторная работа</option>
+                        <option value="Наиз">Наизусть</option>
+                        <option value="П/Р">Практическая работа</option>
+                        <option value="РНО">Работа над ошибками</option>
+                        <option value="К/К">Работа с контурными картами</option>
+                        <option value="ТР">Творческая работа</option>
+                        <option value="ДУ">Дистанционный урок</option>
+                        <option value="Р/У">Работа на уроке</option>
+                        <option value="Р/Т">Рабочая тетрадь (конспект)</option>
+                        <option value="ЧИТ">Чтение (иностранный язык)</option>
+                        <option value="ОТВ">Ответ на уроке</option>
                         {{end}}
                     </select>
                     <input type="number" name="score" min="1" max="5" required>
+                    <button type="button" class="delete-button" onclick="this.parentElement.remove()">
+                        <i data-feather="trash-2"></i>
+                    </button>
                 </div>
             </div>
             <div class="button-group">
@@ -119,7 +125,6 @@
                     <i data-feather="arrow-left"></i>
                     Назад
                 </button>
-
             </div>
         </form>
     </div>
